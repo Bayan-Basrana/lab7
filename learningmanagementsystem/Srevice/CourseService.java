@@ -60,7 +60,7 @@ public ArrayList<Course> getCourseByStatus (String status){
 public long weeksInSchedule (String courseCode ) {
         for(Course c:courses){
     if (c.getCourseCode().equalsIgnoreCase(courseCode)   &&
-            c.getScheduleStart() != null && c.getScheduleEnd()!=null  && c.getScheduleStart().isAfter(c.getScheduleEnd())){
+            c.getScheduleStart() != null && c.getScheduleEnd()!=null  && c.getScheduleEnd().isAfter(c.getScheduleStart())){
         return ChronoUnit.WEEKS.between(c.getScheduleStart(),c.getScheduleEnd());
     }}
     return 0;
